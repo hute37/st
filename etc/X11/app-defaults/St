@@ -21,7 +21,15 @@
 ! - to define 'st-*' aliases, append to your ~/bash_aliases, ~/.zsh_aliases, ...
 !     cat  etc/X11/app-defaults/St | perl -lne 'print if s/.*#color\[(.*)\].*/$1/' | xargs -I{} printf "alias st-{}='st -n st-{} -T {}'\n"
 !
-
+!  Fonts
+!  =====
+!
+! - to list font classes:
+!     cat  etc/X10/app-defaults/St | perl -lne 'print if s/.*#font\[(.*)\].*"(.*)".*/$1 "$2"/' | xargs -I{} echo 'vf() { st -c St.$1 -T "{}" -e bash -i -c "ls -l /; echo $*; read z" &; }; vf {}'
+!
+! - to list font families:
+!    fc-list | cut -d: -f2 | cut -d, -f1 | sort | uniq
+!
 
 ! --- These options only take effect on startup. ---
 St*termname:     st-256color
@@ -30,10 +38,140 @@ St*termname:     st-256color
 St*borderless:        0
 
 ! --- The following options options can be reloaded via USR1 signal. ---
-!St*font:              Fantasque Sans Mono:pixelsize=22:antialias=true:autohint=true;
-St*font:              Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
-!St*font:              Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true;
-!St*font:              Liberation Mono:pixelsize=12:antialias=true:autohint=true;
+! 
+! Fonts
+! =====
+!
+! font-size:
+!
+! - 'D': default
+! - 'T': tiny
+! - 'S': small
+! - 'M': medium
+! - 'L': large
+! - 'H': huge
+!
+!
+
+
+
+! #font[m]:"Monospace"
+St-m*font:               Monospace:pixelsize=18:antialias=true:autohint=true;
+St-md*font:              Monospace:pixelsize=18:antialias=true:autohint=true;
+St-mt*font:              Monospace:pixelsize=10:antialias=true:autohint=true;
+St-ms*font:              Monospace:pixelsize=12:antialias=true:autohint=true;
+St-mm*font:              Monospace:pixelsize=14:antialias=true:autohint=true;
+St-ml*font:              Monospace:pixelsize=18:antialias=true:autohint=true;
+St-mh*font:              Monospace:pixelsize=22:antialias=true:autohint=true;
+
+! #font[a]:"Inconsolata"
+St-a*font:               Inconsolata:pixelsize=18:antialias=true:autohint=true;
+St-ad*font:              Inconsolata:pixelsize=18:antialias=true:autohint=true;
+St-at*font:              Inconsolata:pixelsize=10:antialias=true:autohint=true;
+St-as*font:              Inconsolata:pixelsize=12:antialias=true:autohint=true;
+St-am*font:              Inconsolata:pixelsize=14:antialias=true:autohint=true;
+St-al*font:              Inconsolata:pixelsize=18:antialias=true:autohint=true;
+St-ah*font:              Inconsolata:pixelsize=22:antialias=true:autohint=true;
+
+! #font[c]:"Courier"
+St-c*font:               Courier:pixelsize=18:antialias=true:autohint=true;
+St-cd*font:              Courier:pixelsize=18:antialias=true:autohint=true;
+St-ct*font:              Courier:pixelsize=10:antialias=true:autohint=true;
+St-cs*font:              Courier:pixelsize=12:antialias=true:autohint=true;
+St-cm*font:              Courier:pixelsize=14:antialias=true:autohint=true;
+St-cl*font:              Courier:pixelsize=18:antialias=true:autohint=true;
+St-ch*font:              Courier:pixelsize=22:antialias=true:autohint=true;
+
+! #font[r]:"DroidSansMono"
+St-r*font:               DroidSansMono:pixelsize=18:antialias=true:autohint=true;
+St-rd*font:              DroidSansMono:pixelsize=18:antialias=true:autohint=true;
+St-rt*font:              DroidSansMono:pixelsize=10:antialias=true:autohint=true;
+St-rs*font:              DroidSansMono:pixelsize=12:antialias=true:autohint=true;
+St-rm*font:              DroidSansMono:pixelsize=14:antialias=true:autohint=true;
+St-rl*font:              DroidSansMono:pixelsize=18:antialias=true:autohint=true;
+St-rh*font:              DroidSansMono:pixelsize=22:antialias=true:autohint=true;
+
+! #font[p]:"Pragmata"
+St-p*font:               Pragmata:pixelsize=18:antialias=true:autohint=true;
+St-pd*font:              Pragmata:pixelsize=18:antialias=true:autohint=true;
+St-pt*font:              Pragmata:pixelsize=10:antialias=true:autohint=true;
+St-ps*font:              Pragmata:pixelsize=12:antialias=true:autohint=true;
+St-pm*font:              Pragmata:pixelsize=14:antialias=true:autohint=true;
+St-pl*font:              Pragmata:pixelsize=18:antialias=true:autohint=true;
+St-ph*font:              Pragmata:pixelsize=22:antialias=true:autohint=true;
+
+! #font[s]:"Source Code Pro"
+St-s*font:               Source Code Pro:pixelsize=18:antialias=true:autohint=true;
+St-sd*font:              Source Code Pro:pixelsize=18:antialias=true:autohint=true;
+St-st*font:              Source Code Pro:pixelsize=10:antialias=true:autohint=true;
+St-ss*font:              Source Code Pro:pixelsize=12:antialias=true:autohint=true;
+St-sm*font:              Source Code Pro:pixelsize=14:antialias=true:autohint=true;
+St-sl*font:              Source Code Pro:pixelsize=18:antialias=true:autohint=true;
+St-sh*font:              Source Code Pro:pixelsize=22:antialias=true:autohint=true;
+
+! #font[f]:"Fantasque Sans Mono"
+St-f*font:               Fantasque Sans Mono:pixelsize=18:antialias=true:autohint=true;
+St-fd*font:              Fantasque Sans Mono:pixelsize=18:antialias=true:autohint=true;
+St-ft*font:              Fantasque Sans Mono:pixelsize=10:antialias=true:autohint=true;
+St-fs*font:              Fantasque Sans Mono:pixelsize=12:antialias=true:autohint=true;
+St-fm*font:              Fantasque Sans Mono:pixelsize=14:antialias=true:autohint=true;
+St-fl*font:              Fantasque Sans Mono:pixelsize=18:antialias=true:autohint=true;
+St-fh*font:              Fantasque Sans Mono:pixelsize=22:antialias=true:autohint=true;
+
+! #font[l]:"Liberation Mono"
+St-l*font:               Liberation Mono:pixelsize=18:antialias=true:autohint=true;
+St-ld*font:              Liberation Mono:pixelsize=18:antialias=true:autohint=true;
+St-lt*font:              Liberation Mono:pixelsize=10:antialias=true:autohint=true;
+St-ls*font:              Liberation Mono:pixelsize=12:antialias=true:autohint=true;
+St-lm*font:              Liberation Mono:pixelsize=14:antialias=true:autohint=true;
+St-ll*font:              Liberation Mono:pixelsize=18:antialias=true:autohint=true;
+St-lh*font:              Liberation Mono:pixelsize=22:antialias=true:autohint=true;
+
+! #font[n]:"Noto Mono"
+St-n*font:               Noto Mono:pixelsize=18:antialias=true:autohint=true;
+St-nd*font:              Noto Mono:pixelsize=18:antialias=true:autohint=true;
+St-nt*font:              Noto Mono:pixelsize=10:antialias=true:autohint=true;
+St-ns*font:              Noto Mono:pixelsize=12:antialias=true:autohint=true;
+St-nm*font:              Noto Mono:pixelsize=14:antialias=true:autohint=true;
+St-nl*font:              Noto Mono:pixelsize=18:antialias=true:autohint=true;
+St-nh*font:              Noto Mono:pixelsize=22:antialias=true:autohint=true;
+
+! #font[t]:"Terminus"
+St-t*font:               Terminus:pixelsize=18:antialias=true:autohint=true;
+St-td*font:              Terminus:pixelsize=18:antialias=true:autohint=true;
+St-tt*font:              Terminus:pixelsize=10:antialias=true:autohint=true;
+St-ts*font:              Terminus:pixelsize=12:antialias=true:autohint=true;
+St-tm*font:              Terminus:pixelsize=14:antialias=true:autohint=true;
+St-tl*font:              Terminus:pixelsize=18:antialias=true:autohint=true;
+St-th*font:              Terminus:pixelsize=22:antialias=true:autohint=true;
+
+! #font[k]:"Mononoki"
+St-k*font:               Mononoki Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-kd*font:              Mononoki Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-kt*font:              Mononoki Nerd Font:pixelsize=10:antialias=true:autohint=true;
+St-ks*font:              Mononoki Nerd Font:pixelsize=12:antialias=true:autohint=true;
+St-km*font:              Mononoki Nerd Font:pixelsize=14:antialias=true:autohint=true;
+St-kl*font:              Mononoki Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-kh*font:              Mononoki Nerd Font:pixelsize=22:antialias=true:autohint=true;
+
+! #font[i]:"Iosevka"
+St-i*font:               Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-id*font:              Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-it*font:              Iosevka Nerd Font:pixelsize=10:antialias=true:autohint=true;
+St-is*font:              Iosevka Nerd Font:pixelsize=12:antialias=true:autohint=true;
+St-im*font:              Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true;
+St-il*font:              Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-ih*font:              Iosevka Nerd Font:pixelsize=22:antialias=true:autohint=true;
+
+! #font[d]:"default"
+St*font:                 Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-d*font:               Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-dd*font:              Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-dt*font:              Iosevka Nerd Font:pixelsize=10:antialias=true:autohint=true;
+St-ds*font:              Iosevka Nerd Font:pixelsize=12:antialias=true:autohint=true;
+St-dm*font:              Iosevka Nerd Font:pixelsize=14:antialias=true:autohint=true;
+St-dl*font:              Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
+St-dh*font:              Iosevka Nerd Font:pixelsize=22:antialias=true:autohint=true;
 
 ! window padding
 St*borderpx:          10
