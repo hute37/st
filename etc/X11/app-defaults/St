@@ -145,14 +145,14 @@ St-tm*font:              Terminus:pixelsize=14:antialias=true:autohint=true;
 St-tl*font:              Terminus:pixelsize=18:antialias=true:autohint=true;
 St-th*font:              Terminus:pixelsize=22:antialias=true:autohint=true;
 
-! #font[k]:"Mononoki"
-St-k*font:               Mononoki Nerd Font:pixelsize=18:antialias=true:autohint=true;
-St-kd*font:              Mononoki Nerd Font:pixelsize=18:antialias=true:autohint=true;
-St-kt*font:              Mononoki Nerd Font:pixelsize=10:antialias=true:autohint=true;
-St-ks*font:              Mononoki Nerd Font:pixelsize=12:antialias=true:autohint=true;
-St-km*font:              Mononoki Nerd Font:pixelsize=14:antialias=true:autohint=true;
-St-kl*font:              Mononoki Nerd Font:pixelsize=18:antialias=true:autohint=true;
-St-kh*font:              Mononoki Nerd Font:pixelsize=22:antialias=true:autohint=true;
+! #font[k]:"mononoki"
+St-k*font:               mononoki:pixelsize=18:antialias=true:autohint=true;
+St-kd*font:              mononoki:pixelsize=18:antialias=true:autohint=true;
+St-kt*font:              mononoki:pixelsize=10:antialias=true:autohint=true;
+St-ks*font:              mononoki:pixelsize=12:antialias=true:autohint=true;
+St-km*font:              mononoki:pixelsize=14:antialias=true:autohint=true;
+St-kl*font:              mononoki:pixelsize=18:antialias=true:autohint=true;
+St-kh*font:              mononoki:pixelsize=22:antialias=true:autohint=true;
 
 ! #font[i]:"Iosevka"
 St-i*font:               Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;
