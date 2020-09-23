@@ -2,9 +2,24 @@
 ! st xresource file
 !
 
-! color scheme:
+! 
+! Resources
+! =========
 !
-! cat  src/system/usr/local/share/X11/app-defaults/St | perl -lne 'print if s/.*#color\[(.*)\].*/$1/' | xargs -I{} echo 'st -n st-{} -T {} -e bash -i -c "ls -l /; echo {}; read z" &'
+! - to load:
+!    xrdb -merge etc/X11/app-defaults/St   
+!
+! - to persist: 
+!    cat etc/X11/app-defaults/St >> ~/.Xresources  # once
+!
+!  Colors
+!  ======
+!
+! - to test themes:
+!     cat  etc/X11/app-defaults/St | perl -lne 'print if s/.*#color\[(.*)\].*/$1/' | xargs -I{} echo 'st -n st-{} -T {} -e bash -i -c "ls -l /; echo {}; read z" &'
+!
+! - to define 'st-*' aliases, append to your ~/bash_aliases, ~/.zsh_aliases, ...
+!     cat  etc/X11/app-defaults/St | perl -lne 'print if s/.*#color\[(.*)\].*/$1/' | xargs -I{} printf "alias st-{}='st -n st-{} -T {}'\n"
 !
 
 
