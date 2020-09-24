@@ -31,16 +31,14 @@ _Patched fork of The ["suckless terminal (st)"](https://st.suckless.org/)_
 
 ### unstable
 
-- vim-browse
 - ...
 
 
 ---
 
-| Patch      | Depend | Branch            | PR | URL | Note |
-|------------|--------|-------------------|----|-----|------|
-| vim-browse |        | f/1011-vim-browse |    |     |      |
-|            |        |                   |    |     |      |
+| Patch | Depend | Branch | PR  | URL | Note |
+|-------|--------|--------|-----|-----|------|
+|       |        |        |     |     |      |
 
 
 
