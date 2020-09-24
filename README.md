@@ -24,43 +24,34 @@ _Patched fork of The ["suckless terminal (st)"](https://st.suckless.org/)_
 
 ## Patches
 
-### included in base
+### stable
+
+- ...
 
 
-  * [patch releases (no-alpha)](https://github.com/juliusHuelsmann/st/releases)
-  
-  - "alpha" patches requires composite extension, unavailable on x2go remote boxes.
+### unstable
+
+- ...
 
 
+---
 
-### todo (included in "st.ex")
+| Patch | Depend | Branch | PR  | URL |
+|-------|--------|--------|-----|-----|
+| ...   | ...    | ...    | ... | ... |
+|       |        |        |     |     |
 
-- newterm
-- font2
-- visualbell
-- w3m
-- netwmicon
-- colors-at-launch
-- nordtheme
-- xresources
-
-- 
-
-- scrollback
-- scrollback-mouse
-- scrollback-mouse-altscreen
-- scrollback-mouse-increment
 
 
 ## Custom
 
-### fonts
+### Config
 
-| Config       | Font |
-|--------------|------|
-| config       | "Fantasque Sans Mono:pixelsize=22:antialias=true:autohint=true;" |
-| xresources   | "Iosevka Nerd Font:pixelsize=18:antialias=true:autohint=true;" |
-| config.font2 | "Hack:pixelsize=14:antialias=true:autohint=true;" |
+
+| Name | Velue | X-Resource | Desc |
+|------|-------|------------|------|
+| ...  | ...   | ...        | ...  |
+|      |       |            |      |
 
 
 
