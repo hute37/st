@@ -1977,22 +1977,14 @@ run(void)
 }
 
 int
-resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
+resource_read(XrmDatabase db, char *name, enum resource_type rtype, void *dst, char *fullname, char *fullclass)
 {
 	char **sdst = dst;
 	int *idst = dst;
 	float *fdst = dst;
 
-	char fullname[256];
-	char fullclass[256];
 	char *type;
 	XrmValue ret;
-
-	snprintf(fullname, sizeof(fullname), "%s.%s",
-			opt_name ? opt_name : "st", name);
-	snprintf(fullclass, sizeof(fullclass), "%s.%s",
-			opt_class ? opt_class : "St", name);
-	fullname[sizeof(fullname) - 1] = fullclass[sizeof(fullclass) - 1] = '\0';
 
 	XrmGetResource(db, fullname, fullclass, &type, &ret);
 	if (ret.addr == NULL || strncmp("String", type, 64))
@@ -2010,6 +2002,34 @@ resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
 		break;
 	}
 	return 0;
+}
+
+int
+resource_load(XrmDatabase db, char *name, enum resource_type rtype, void *dst)
+{
+	char fullname[256];
+	char fullclass[256];
+	char baseclass[256];
+
+        int rc;
+
+        /* if class starts with 'St-', load default value for class 'St' */
+
+	snprintf(fullname, sizeof(fullname), "%s.%s",
+			opt_name ? opt_name : "st", name);
+	snprintf(fullclass, sizeof(fullclass), "%s.%s",
+			opt_class ? opt_class : "St", name);
+	fullname[sizeof(fullname) - 1] = fullclass[sizeof(fullclass) - 1] = '\0';
+
+	if (opt_class && !strncmp("St-", opt_class, 3)) { 
+          snprintf(baseclass, sizeof(baseclass), "%s.%s",
+			"St", name);
+          baseclass[sizeof(baseclass) - 1] = '\0';
+          rc = resource_read(db,name,rtype,dst, fullname, baseclass);
+        }
+
+        rc = resource_read(db,name,rtype,dst, fullname, fullclass);
+	return rc;
 }
 
 void
