@@ -36,10 +36,10 @@ _Patched fork of The ["suckless terminal (st)"](https://st.suckless.org/)_
 
 ---
 
-| Patch | Depend | Branch | PR  | URL |
-|-------|--------|--------|-----|-----|
-| ...   | ...    | ...    | ... | ... |
-|       |        |        |     |     |
+| Patch | Depend | Branch | PR  | URL | Note |
+|-------|--------|--------|-----|-----|------|
+| ...   | ...    | ...    | ... | ... |      |
+|       |        |        |     |     |      |
 
 
 
