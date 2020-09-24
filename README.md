@@ -38,7 +38,6 @@ _Patched fork of The ["suckless terminal (st)"](https://st.suckless.org/)_
 
 | Patch | Depend | Branch | PR  | URL | Note |
 |-------|--------|--------|-----|-----|------|
-| ...   | ...    | ...    | ... | ... |      |
 |       |        |        |     |     |      |
 
 
@@ -50,7 +49,6 @@ _Patched fork of The ["suckless terminal (st)"](https://st.suckless.org/)_
 
 | Name | Velue | X-Resource | Desc |
 |------|-------|------------|------|
-| ...  | ...   | ...        | ...  |
 |      |       |            |      |
 
 
